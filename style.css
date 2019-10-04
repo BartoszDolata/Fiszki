@@ -1,0 +1,75 @@
+*{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+body{
+  width:100%;
+  height:auto;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("tlo.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+main{
+  width: 100%;
+  height: auto;
+}
+header{
+  float: right;
+  padding: 5px 20px;
+  margin: 2%;
+  background-color: white;
+  font-size: 3em;
+  color: black;
+  border-radius: 10px;
+}
+
+nav{
+  margin-top: 2%;
+  height: 10%;
+  width: 100%;
+
+}
+nav ul li{
+  display: inline-block;
+  padding: 5px 20px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 10px;
+}
+nav ul li:hover{
+  background-color: #BF9075;
+  color:#F2DABD;
+  opacity: 0.3;
+
+}
+nav ul li a{
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
+}
+
+section{
+  float:left;
+  margin-top:10%;
+  margin-bottom: 10%;
+  margin-left:5%;
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  padding:5%;
+  border-radius: 10px;
+  font-size: 3vh;
+
+}
+
+footer{
+  width: 100%;
+  clear: both;
+  position: absolute;
+  bottom:0px;
+  background-color: #916D59;
+  text-align: center;
+}
