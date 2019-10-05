@@ -8,12 +8,14 @@ body{
   height:auto;
   font-family: 'Roboto', sans-serif;
   background-image: url("tlo.jpg");
-  background-size: 100%;
+  background-size: 180%;
   background-repeat: no-repeat;
   background-position:center;
+  background-attachment: fixed;
 }
 main{
   width: 100%;
+  height: 100%;
   height: auto;
 }
 header{
@@ -21,7 +23,7 @@ header{
   padding: 5px 20px;
   margin: 2%;
   background-color: white;
-  font-size: 3em;
+  font-size: 4vw;
   color: black;
   border-radius: 10px;
 }
@@ -47,29 +49,55 @@ nav ul li:hover{
 }
 nav ul li a{
   text-decoration: none;
-  font-size: 2em;
+  font-size: 3vw;
   color: black;
 }
 
 section{
   float:left;
   margin-top:10%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   margin-left:5%;
   width: 40%;
   height: 80%;
   background-color: white;
   padding:5%;
   border-radius: 10px;
-  font-size: 3vh;
+  font-size: 2vw;
 
 }
+section input[type="text"], section input[type="password"]{
+  width: 50%;
+}
+section input[type="submit"]{
+  width: 60%;
+  padding: 3%;
+  margin: 5% 20%;
+  background-color: #F2DABD;
+  border: 0px;
+  border-radius: 5px;
+  color:#BF9075;
+  font-size: 3vw;
+}
+section input[type="submit"]:hover{
+  box-shadow: -1px 6px 40px 3px rgba(242,218,189,1);
+  color: white;
+}
 
+section div{
+  width: 35%;
+}
 footer{
   width: 100%;
   clear: both;
-  position: absolute;
-  bottom:0px;
   background-color: #916D59;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+.login{
+  display: inline-block;
+}
+.index{
+
 }
