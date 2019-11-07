@@ -83,7 +83,9 @@ section input[type="submit"]:hover{
   box-shadow: -1px 6px 40px 3px rgba(242,218,189,1);
   color: white;
 }
-
+section input[type="radio"]{
+    margin-left:2%;
+}
 section div{
   width: 35%;
 }
@@ -118,4 +120,12 @@ footer{
   text-align: center;
   font-size: 3vw;
 
+}
+#dodaj{
+  width: 30%;
+  padding: 1%;
+  margin: 1% 20%;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 2vw;
 }
