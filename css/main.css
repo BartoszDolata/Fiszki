@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background_ipad.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+header>* {
+    position: absolute;
+}
+
+header h1 {
+    top: 50vh;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+header a {
+    display: block;
+    bottom: 3vw;
+    right: 5vh;
+    width: 25vw;
+    height: 8vh;
+    text-decoration: none;
+    text-align: center;
+    line-height: 8vh;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2E2E40;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+header a:hover {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #2E2E40;
+    font-weight: 700;
+    background-color: rgba(242, 218, 189, 0.5);
+
+}
+
+main {
+    width: 70%;
+    margin: 10vh auto 0;
+    height: 85vh;
+}
+
+main h3 {
+    font-size: 3rem;
+    margin-bottom: 10%;
+}
+
+main p {
+    font-size: 2rem;
+}
+
+footer {
+    height: 5vh;
+}
+
+footer p {
+    text-align: center;
+}

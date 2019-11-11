@@ -1,24 +1,26 @@
-*{
+* {
   margin: 0 auto;
   padding: 0 auto;
 }
 
-body{
-  width:100%;
-  height:auto;
+body {
+  width: 100%;
+  height: auto;
   font-family: 'Roboto', sans-serif;
   background-image: url("tlo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   background-attachment: fixed;
 }
-main{
+
+main {
   width: 100%;
   height: 100%;
   height: auto;
 }
-header{
+
+header {
   float: right;
   padding: 5px 20px;
   margin: 2%;
@@ -28,68 +30,79 @@ header{
   border-radius: 10px;
 }
 
-nav{
+nav {
   margin-top: 2%;
   height: 10%;
   width: 100%;
 
 }
-nav ul li{
+
+nav ul li {
   display: inline-block;
   padding: 5px 20px;
   margin: 5px;
   background-color: white;
   border-radius: 10px;
+  transition: 0.4;
 }
-nav ul li:hover{
+
+nav ul li:hover {
   background-color: #BF9075;
-  color:#F2DABD;
+  color: #F2DABD;
   opacity: 0.3;
 
 }
-nav ul li a{
+
+nav ul li a {
   text-decoration: none;
   font-size: 3vw;
   color: black;
 }
 
-section{
-  float:left;
-  margin-top:10%;
+section {
+  float: left;
+  margin-top: 10%;
   margin-bottom: 5%;
-  margin-left:5%;
+  margin-left: 5%;
   width: 40%;
   height: 80%;
   background-color: white;
-  padding:5%;
+  padding: 5%;
   border-radius: 10px;
   font-size: 2vw;
 
 }
-section input[type="text"], section input[type="password"]{
+
+section input[type="text"],
+section input[type="password"] {
   width: 50%;
 }
-section input[type="submit"]{
+
+section input[type="submit"] {
   width: 60%;
   padding: 3%;
   margin: 5% 20%;
   background-color: #F2DABD;
   border: 0px;
   border-radius: 5px;
-  color:#BF9075;
+  color: #BF9075;
   font-size: 3vw;
 }
-section input[type="submit"]:hover{
-  box-shadow: -1px 6px 40px 3px rgba(242,218,189,1);
+
+section input[type="submit"]:hover {
+  box-shadow: -1px 6px 40px 3px rgba(242, 218, 189, 1);
   color: white;
 }
-section input[type="radio"]{
-    margin-left:2%;
+
+section input[type="radio"] {
+  margin-left: 2%;
 }
-section div{
+
+section div {
   width: 35%;
 }
-footer{
+
+footer {
   width: 100%;
   clear: both;
   background-color: #916D59;
@@ -97,31 +110,34 @@ footer{
   position: absolute;
   bottom: 0;
 }
-.login{
+
+.login {
   display: inline-block;
 }
-.index{
 
-}
-#cont{
+.index {}
+
+#cont {
   margin-top: 1%;
   margin-bottom: 1%;
   width: 60%;
   height: 50vh;
 }
-.content_box{
+
+.content_box {
   box-sizing: border-box;
   width: 45%;
   margin: 2%;
   float: left;
   height: 100%;
   position: relative;
-  top:40%;
+  top: 40%;
   text-align: center;
   font-size: 3vw;
 
 }
-#dodaj{
+
+#dodaj {
   width: 30%;
   padding: 1%;
   margin: 1% 20%;
