@@ -10,8 +10,7 @@ html {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
 }
-
-header {
+header.index {
     width: 100%;
     height: 100vh;
     background-image: url(../img/background_ipad.jpg);
@@ -21,19 +20,20 @@ header {
     position: relative;
 }
 
-header>* {
+header.index>* {
     position: absolute;
 }
 
-header h1 {
+header.index h1 {
     top: 50vh;
     width: 100%;
     padding: 10px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
 }
 
-header a {
+header.index a {
     display: block;
     bottom: 3vw;
     right: 5vh;
@@ -50,7 +50,7 @@ header a {
 
 }
 
-header a:hover {
+header.index a:hover {
     font-weight: 800;
     font-size: 1.5rem;
     color: #2E2E40;
@@ -59,17 +59,18 @@ header a:hover {
 
 }
 
-main {
+
+main.witaj {
     width: 70%;
     margin: 10vh auto 0;
 }
 
-main h3 {
+main.witaj h3 {
     font-size: 3rem;
     margin-bottom: 10%;
 }
 
-main p {
+main.witaj p {
     font-size: 2rem;
 }
 
@@ -86,13 +87,16 @@ section.login {
 section.login input {
     display: block;
     margin: 2vh;
-    width: 30vh;
-    height: 3vh;
+    width: 30vw;
+    height: 5vh;
+    border: 1px solid rgba(0,0,0,0.3)
 }
 
 section.login input[type="submit"] {
     background-color: rgba(242, 218, 189, 0.5);
     border: 0;
+    height: 5vh;
+    border-radius: 1vw;
 }
 
 footer {
@@ -104,4 +108,32 @@ footer {
 
 footer p {
     text-align: center;
+}
+
+@media (max-width: 1025px){
+   
+    section.login input {
+    width: 40vw;
+    height: 5vh;
+}
+}
+@media (max-width: 760px){
+    main.witaj h3 {
+        font-size: 1.75rem;
+    text-align: center;
+}
+        main.witaj p {
+            font-size: 1.3rem;
+            text-align: center;
+
+}
+    section.login input {
+    width: 60vw;
+    height: 8vh;
+    }
+     header.index a {
+    right: 5vw;
+    left:5vw;
+    width: 90vw;
+}
 }
