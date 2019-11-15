@@ -19,7 +19,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
 }
 
 header>* {
@@ -63,7 +62,6 @@ header a:hover {
 main {
     width: 70%;
     margin: 10vh auto 0;
-    height: 85vh;
 }
 
 main h3 {
@@ -75,7 +73,32 @@ main p {
     font-size: 2rem;
 }
 
+section.login {
+    margin: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 50vh;
+
+}
+
+
+section.login input {
+    display: block;
+    margin: 2vh;
+    width: 30vh;
+    height: 3vh;
+}
+
+section.login input[type="submit"] {
+    background-color: rgba(242, 218, 189, 0.5);
+    border: 0;
+}
+
 footer {
+    top: 0;
+    left: 0;
+    right: 0;
     height: 5vh;
 }
 
