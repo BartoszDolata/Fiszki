@@ -10,6 +10,7 @@ html {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
 }
+
 header.index {
     width: 100%;
     height: 100vh;
@@ -62,12 +63,13 @@ header.index a:hover {
 
 main.witaj {
     width: 70%;
-    margin: 10vh auto 0;
+    height: 90vh;
+    margin: 0 auto;
 }
 
 main.witaj h3 {
     font-size: 3rem;
-    margin-bottom: 10%;
+    margin: 5% 0;
 }
 
 main.witaj p {
@@ -89,7 +91,7 @@ section.login input {
     margin: 2vh;
     width: 30vw;
     height: 5vh;
-    border: 1px solid rgba(0,0,0,0.3)
+    border: 1px solid rgba(0, 0, 0, 0.3)
 }
 
 section.login input[type="submit"] {
@@ -110,30 +112,38 @@ footer p {
     text-align: center;
 }
 
-@media (max-width: 1025px){
-   
+@media (max-width: 1025px) {
+
     section.login input {
-    width: 40vw;
-    height: 5vh;
+        width: 40vw;
+        height: 5vh;
+    }
 }
-}
-@media (max-width: 760px){
+
+@media (max-width: 760px) {
+    main.witaj {
+        height: 93vh;
+    }
+
     main.witaj h3 {
         font-size: 1.75rem;
-    text-align: center;
-}
-        main.witaj p {
-            font-size: 1.3rem;
-            text-align: center;
-
-}
-    section.login input {
-    width: 60vw;
-    height: 8vh;
+        text-align: center;
     }
-     header.index a {
-    right: 5vw;
-    left:5vw;
-    width: 90vw;
-}
+
+    main.witaj p {
+        font-size: 1.3rem;
+        text-align: center;
+
+    }
+
+    section.login input {
+        width: 60vw;
+        height: 8vh;
+    }
+
+    header.index a {
+        right: 5vw;
+        left: 5vw;
+        width: 90vw;
+    }
 }
