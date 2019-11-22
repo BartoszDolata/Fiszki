@@ -23,15 +23,37 @@
                 <li><a href="./add.html">Dodaj zestaw</a></li>
                 <li><a href="./addcarts.html">Dodaj fiszki</a></li>
                 <li><a href="./adduser.html">Dodaj użytkownika</a></li>
+                <li><a href="./users.html">Edytuj dane użytkowników</a></li>
+
             </ul>
         </nav>
     </aside>
     <main class="flex-container">
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
+        <form method="post" class="flex-container cntr">
+            <div>Wpisz dane</div>
+            <input type="text" name="name" placeholder="Imię">
+            <input type="text" name="lastname" placeholder="Nazwisko">
+            <div>Dane do logowania</div>
+            <input type="text" name="login" placeholder="Login">
+            <input type="password" name="password" placeholder="Hasło">
+            <div>Status użytkownika</div>
+            <select class="opt" name="status">
+                <option value="active">Aktywny</option>
+                <option value="inactive">Nieaktywny</option>
+                <option value="deleted">Usunięty</option>
+            </select>
+            <div>Klasa</div>
+            <select name="schooclass">
+                <option value="1a">1A</option>
+                <option value="1b">1B</option>
+                <option value="2a">2A</option>
+                <option value="2b">2B</option>
+                <option value="3c">3C</option>
+            </select>
+
+            <input type="submit" value="Dodaj!">
+
+        </form>
     </main>
     <footer>
         <p>Projekt wykonał: Bartosz Dolata &reg;</p>

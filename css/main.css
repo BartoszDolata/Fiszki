@@ -63,7 +63,7 @@ header.index a:hover {
 
 main.witaj {
     width: 70%;
-    height: 90vh;
+    height: 85vh;
     margin: 0 auto;
 }
 
@@ -104,14 +104,17 @@ section.login input[type="submit"] {
 }
 
 footer {
-    top: 0;
+    display: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 5vh;
+    margin-top: 5vh;
 }
 
 footer p {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 1025px) {
@@ -151,10 +154,11 @@ footer p {
 }
 
 /* Glowna podstrona */
+
 .main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    min-height: 100vh;
 }
 
 .head {
@@ -194,7 +198,6 @@ div.burger {
 
 div.burger:hover {
     color: #81A2EF;
-    ;
 }
 
 aside {
@@ -251,6 +254,7 @@ aside nav ul li:hover a {
     flex-direction: column;
     align-content: space-around;
     min-height: 600px;
+    flex: 1;
 }
 
 .set {
@@ -260,7 +264,7 @@ aside nav ul li:hover a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 5px 4px #2E2E40;
+
 }
 
 .set a {
@@ -270,12 +274,11 @@ aside nav ul li:hover a {
     font: 2.3rem sans-serif;
     text-align: center;
     padding: 5vh;
+    box-shadow: 0px 0px 5px 4px #2E2E40;
 }
 
 .set :hover {
-    -webkit-box-shadow: 3px 1px 10px 15px rgba(129, 161, 237, 1);
-    -moz-box-shadow: 3px 1px 10px 15px rgba(129, 161, 237, 1);
-    box-shadow: 3px 1px 20px 15px rgba(129, 161, 237, 1);
+    box-shadow: 0px 0px 18px 5px rgba(129, 161, 237, 1);
 }
 
 .cntr {
@@ -292,10 +295,12 @@ aside nav ul li:hover a {
     text-align: center;
 }
 
-.cntr>select>option {
-
-    text-align: center;
+.opt>* {
+    background-color: rgba(46, 46, 64, .8);
+    color: white;
+    font-size: 2rem;
 }
+
 
 .cntr>input[type="submit"] {
     background-color: transparent;
@@ -305,6 +310,11 @@ aside nav ul li:hover a {
     font-size: 2.3rem;
     width: 40vh;
     height: 8vh;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 2rem;
 }
 
 .cntr>input[type="submit"]:hover {

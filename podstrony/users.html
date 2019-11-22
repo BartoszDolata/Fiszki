@@ -23,15 +23,35 @@
                 <li><a href="./add.html">Dodaj zestaw</a></li>
                 <li><a href="./addcarts.html">Dodaj fiszki</a></li>
                 <li><a href="./adduser.html">Dodaj użytkownika</a></li>
+                <li><a href="./users.html">Edytuj dane użytkowników</a></li>
             </ul>
         </nav>
     </aside>
     <main class="flex-container">
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
-        <div class="set"><a href="">Zestaw 1</a></div>
+        <form class="flex-container cntr user">
+            <select class="opt" name="schooclass">
+                <option value="1a">1A</option>
+                <option value="1b">1B</option>
+                <option value="2a">2A</option>
+                <option value="2b">2B</option>
+                <option value="3c">3C</option>
+            </select>
+            <select class="opt" name="users">
+                <option value="1">Antoni Wojda</option>
+                <option value="2">Jan Kowalski</option>
+                <option value="3">Janusz Nowak</option>
+                <option value="4">Wojtek Smykała</option>
+                <option value="5">Tadeusz Bronek</option>
+            </select>
+            <select class="opt" name="status">
+                <option value="active">Aktywny</option>
+                <option value="inactive">Nieaktywny</option>
+                <option value="deleted">Usunięty</option>
+            </select>
+
+            <input type="submit" value="Aktualizuj!">
+
+        </form>
     </main>
     <footer>
         <p>Projekt wykonał: Bartosz Dolata &reg;</p>
