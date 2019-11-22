@@ -168,7 +168,7 @@ footer p {
     background-color: #2E2E40;
     align-items: center;
     flex-basis: 8vh;
-    z-index: 1;
+    z-index: 2;
 }
 
 .head a {
@@ -193,7 +193,7 @@ div.burger {
     font-size: 6vh;
     cursor: pointer;
     color: white;
-    z-index: 1;
+    z-index: 2;
 }
 
 div.burger:hover {
@@ -207,6 +207,7 @@ aside {
     left: -20%;
     background-color: #81A2EF;
     transition: 0.3s;
+    z-index: 1;
 }
 
 @media(max-width:1000px) {
@@ -327,4 +328,49 @@ input[type="password"] {
     margin-top: 3vh;
     text-align: center;
     font: 1.5rem sans-serif;
+}
+
+
+.fiszka {
+    width: 80vw;
+    height: 80vh;
+    box-shadow: 0px 0px 5px 4px #2E2E40;
+    z-index: 0;
+    position: relative;
+    text-align: center;
+    transition: transform 0.6s linear;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+@media(max-width:1000px) {
+
+    .fiszka {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .polish,
+    .english {
+        font-size: 1.4rem;
+    }
+}
+
+.polish,
+.english {
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 5%;
+}
+
+.english {
+    transform: rotateY(180deg);
+}
+
+.rotate {
+    transform: rotateY(180deg);
 }
