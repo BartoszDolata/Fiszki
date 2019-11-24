@@ -20,15 +20,20 @@
         <nav>
             <ul>
                 <li><a href="./main.html">Ucz sie!</a></li>
-                <li><a href="./add.html">Dodaj zestaw</a></li>
-                <li><a href="./addcarts.html">Dodaj fiszki</a></li>
+                <li><a href="./addsets.html">Dodaj zestaw</a></li>
+                <li><a href="./deletesets.html">Usuwanie zestawów</a></li>
+                <li><a href="./addcards.html">Dodaj fiszki</a></li>
+                <li><a href="./deletecards.html">Usuwanie użytkowników</a></li>
                 <li><a href="./adduser.html">Dodaj użytkownika</a></li>
+                <li><a href="./deleteusers.html">Usuwanie użytkowników</a></li>
                 <li><a href="./users.html">Edytuj dane użytkowników</a></li>
             </ul>
         </nav>
     </aside>
     <main class="flex-container">
+        <p class="name akp">Użytkownik</p>
         <form class="flex-container cntr">
+            <div class="desc">Klasa</div>
             <select class="opt" name="schooclass">
                 <option value="1a">1A</option>
                 <option value="1b">1B</option>
@@ -36,6 +41,7 @@
                 <option value="2b">2B</option>
                 <option value="3c">3C</option>
             </select>
+            <div class="desc">Imię i nazwisko</div>
             <select class="opt" name="users">
                 <option value="1">Antoni Wojda</option>
                 <option value="2">Jan Kowalski</option>
@@ -43,11 +49,27 @@
                 <option value="4">Wojtek Smykała</option>
                 <option value="5">Tadeusz Bronek</option>
             </select>
+            <input type="text" placeholder="Nowe Nazwisko">
+            <input type="text" placeholder="Nowe Imię">
+            <div class="desc">status</div>
             <select class="opt" name="status">
                 <option value="active">Aktywny</option>
                 <option value="inactive">Nieaktywny</option>
                 <option value="deleted">Usunięty</option>
             </select>
+            <div class="desc">Logowanie</div>
+            <select class="opt" name="users">
+                <option value="1">antoni.wojda</option>
+                <option value="2">jan.kowalski</option>
+                <option value="3">janusz.nowak</option>
+                <option value="4">wojtek.smykala</option>
+                <option value="5">tadeusz.bronek</option>
+                <option value="6">tadeusz.bronek1</option>
+            </select>
+            <input type="text" placeholder="Nowy Login">
+            <input type="password" placeholder="Nowe hasło">
+
+
 
             <input type="submit" value="Aktualizuj!">
 

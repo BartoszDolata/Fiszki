@@ -20,11 +20,13 @@
         <nav>
             <ul>
                 <li><a href="./main.html">Ucz sie!</a></li>
-                <li><a href="./add.html">Dodaj zestaw</a></li>
-                <li><a href="./addcarts.html">Dodaj fiszki</a></li>
+                <li><a href="./addsets.html">Dodaj zestaw</a></li>
+                <li><a href="./deletesets.html">Usuwanie zestawów</a></li>
+                <li><a href="./addcards.html">Dodaj fiszki</a></li>
+                <li><a href="./deletecards.html">Usuwanie użytkowników</a></li>
                 <li><a href="./adduser.html">Dodaj użytkownika</a></li>
+                <li><a href="./deleteusers.html">Usuwanie użytkowników</a></li>
                 <li><a href="./users.html">Edytuj dane użytkowników</a></li>
-
             </ul>
         </nav>
     </aside>
@@ -37,10 +39,13 @@
                 <option value="set2">Zestaw 2</option>
                 <option value="set3">Zestaw 3</option>
             </select>
-            <div>Ile fiszek chcesz dodać?</div>
-            <input type="number" name="ilosc">
-            <input type="submit" value="Dodaj!">
-
+            <select name="cards" class="cntr opt">
+                <option value="">Rozwiń listę</option>
+                <option value="card1">emulować - emulate</option>
+                <option value="card2">informatyka - Information Technology(IT)</option>
+                <option value="card3">Lorem ipsum dolor sit, amet consectetur</option>
+            </select>
+            <input type="submit" value="Usuń!">
         </form>
     </main>
     <footer>

@@ -103,6 +103,23 @@ section.login input[type="submit"] {
     font-size: 2.5vh;
 }
 
+/* tymczasowy button */
+section.login a[href] {
+    display: block;
+    background-color: #81A2EF;
+    border: 0;
+    height: 5vh;
+    border-radius: 1vw;
+    color: white;
+    font-size: 2.5vh;
+    width: 30vw;
+    text-align: center;
+    line-height: 5vh;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+/* end */
 footer {
     display: fixed;
     bottom: 0;
@@ -122,6 +139,10 @@ footer p {
     section.login input {
         width: 40vw;
         height: 5vh;
+    }
+
+    footer p {
+        font-size: 1rem;
     }
 }
 
@@ -152,6 +173,7 @@ footer p {
         width: 90vw;
     }
 }
+
 
 /* Glowna podstrona */
 
@@ -210,7 +232,14 @@ aside {
     z-index: 1;
 }
 
-@media(max-width:1000px) {
+@media(max-width:1024px) {
+    aside {
+        width: 40%;
+        left: -40%;
+    }
+}
+
+@media(max-width:900px) {
     aside {
         width: 100%;
         left: -100%;
@@ -232,7 +261,7 @@ aside nav ul li a {
     color: white;
     text-align: center;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 10px 0;
 }
 
@@ -258,6 +287,7 @@ aside nav ul li:hover a {
     flex: 1;
 }
 
+
 .set {
     flex-basis: 15vh;
     margin: 5vh;
@@ -269,13 +299,20 @@ aside nav ul li:hover a {
 }
 
 .set a {
-    flex-basis: 100vw;
+    flex-basis: 80vw;
     text-decoration: none;
     color: #2E2E40;
     font: 2.3rem sans-serif;
     text-align: center;
     padding: 5vh;
     box-shadow: 0px 0px 5px 4px #2E2E40;
+}
+
+@media(max-width: 760px) {
+    .set a {
+        flex-basis: 100vw;
+        font: 1.3rem sans-serif;
+    }
 }
 
 .set :hover {
@@ -290,10 +327,20 @@ aside nav ul li:hover a {
 .cntr>input,
 .cntr>select {
     margin-top: 3vh;
-    width: 50vh;
+    width: 50%;
     height: 10vh;
-    font: 1.3rem sans-serif;
+    font: 2.3rem sans-serif;
     text-align: center;
+    background-color: white;
+}
+
+@media(max-width: 760px) {
+
+    .cntr>input,
+    .cntr>select {
+        width: 80%;
+
+    }
 }
 
 .opt>* {
@@ -308,7 +355,7 @@ aside nav ul li:hover a {
     border: 2px solid #2E2E40;
     border-radius: 5px;
     color: #2E2E40;
-    font-size: 2.3rem;
+    font-size: 2rem;
     width: 40vh;
     height: 8vh;
 }
@@ -373,4 +420,22 @@ input[type="password"] {
 
 .rotate {
     transform: rotateY(180deg);
+}
+
+.akp {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.name {
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.desc {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: gray;
+    font-size: 1rem;
 }
