@@ -27,13 +27,18 @@
                 <input class="login" type="text" name="login" placeholder="Login">
                 <input class="login" type="password" name="password" placeholder="Password">
                 <!-- <input type="submit" name="button" value="Zaloguj"> -->
-                <a href="./podstrony/main.html">Zaloguj</a>
+                <a href="./podstrony/main.php">Zaloguj</a>
             </form>
         </section>
+        
+   
+
     </main>
     <footer>
-        <p>Projekt wykonał: Bartosz Dolata &reg;</p>
+    <?php 
+        require_once("./footer.php");
+    ?>
     </footer>
 </body>
-
 </html>
+    

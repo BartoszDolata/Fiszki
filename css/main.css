@@ -287,6 +287,22 @@ aside nav ul li:hover a {
     flex: 1;
 }
 
+.add {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-content: space-around;
+    flex: 1;
+    flex-basis: 100%;
+
+}
+
+.add>* {
+    margin: 2vh 0 0 0;
+    padding: 1vh;
+    border: 2px solid #81A2EF;
+}
+
 
 .set {
     flex-basis: 15vh;
@@ -341,6 +357,11 @@ aside nav ul li:hover a {
         width: 80%;
 
     }
+
+    .add {
+        width: 80%;
+    }
+
 }
 
 .opt>* {
@@ -374,7 +395,7 @@ input[type="password"] {
 .cntr>div {
     margin-top: 3vh;
     text-align: center;
-    font: 1.5rem sans-serif;
+    font: 2.5rem sans-serif;
 }
 
 
@@ -438,4 +459,16 @@ input[type="password"] {
     font-weight: 400;
     color: gray;
     font-size: 1rem;
+}
+
+.plus>.fa-plus {
+    display: block;
+    font-size: 3rem;
+    color: gray;
+}
+
+.plus>.fa-plus:hover {
+    display: block;
+    font-size: 3rem;
+    color: black;
 }
