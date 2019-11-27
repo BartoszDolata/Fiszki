@@ -9,6 +9,7 @@
 html {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    scroll-behavior: smooth;
 }
 
 header.index {
@@ -91,7 +92,7 @@ section.login input {
     margin: 2vh;
     width: 30vw;
     height: 5vh;
-    border: 1px solid rgba(0, 0, 0, 0.3)
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 section.login input[type="submit"] {
@@ -101,6 +102,7 @@ section.login input[type="submit"] {
     border-radius: 1vw;
     color: white;
     font-size: 2.5vh;
+
 }
 
 /* tymczasowy button */
@@ -120,6 +122,8 @@ section.login a[href] {
 }
 
 /* end */
+
+
 footer {
     display: fixed;
     bottom: 0;
@@ -243,6 +247,7 @@ aside {
     aside {
         width: 100%;
         left: -100%;
+        padding-top: 10px;
     }
 }
 
@@ -348,6 +353,7 @@ aside nav ul li:hover a {
     font: 2.3rem sans-serif;
     text-align: center;
     background-color: white;
+    border: 1px solid gray;
 }
 
 @media(max-width: 760px) {
