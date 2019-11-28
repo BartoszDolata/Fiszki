@@ -25,13 +25,13 @@
     </aside>
 
     <main class="flex-container">
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
-        <div class="set"><a href="./fiszki.php">Zestaw 1</a></div>
+        <div class="set"><a href="./set.php">Zestaw 1</a></div>
+        <div class="set"><a href="./set.php">Zestaw 2</a></div>
+        <div class="set"><a href="./set.php">Zestaw 3</a></div>
+        <div class="set"><a href="./set.php">Zestaw 4</a></div>
+        <div class="set"><a href="./set.php">Zestaw 5</a></div>
+        <div class="set"><a href="./set.php">Zestaw 6</a></div>
+        <div class="set"><a href="./set.php">Zestaw 7</a></div>
     </main>
     
     <footer>

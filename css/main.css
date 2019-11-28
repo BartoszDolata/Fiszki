@@ -478,3 +478,66 @@ input[type="password"] {
     font-size: 3rem;
     color: black;
 }
+
+.link_reset {
+    text-decoration: none;
+    color: #2E2E40;
+}
+
+.edit_set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-row {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin-top: 15px;
+
+}
+
+.flex-row>* {
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.flex-row>p {
+    flex-basis: 40%;
+    flex-grow: 1;
+}
+
+.flex-row>a {
+    line-height: 100%;
+}
+
+
+
+
+.flex-row>.trash {
+    min-width: 50px;
+
+}
+
+.flex-row>.trash:hover i {
+    color: rgba(0, 0, 0, 0.5)
+}
+
+@media (max-width: 760px) {
+    .flex-row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+
+}
