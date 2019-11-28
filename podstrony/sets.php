@@ -12,12 +12,12 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
 
-    
+
     <aside>
         <?php 
         require_once("./nav.php");
@@ -33,7 +33,7 @@
         <div class="set"><a href="./set.php">Zestaw 6</a></div>
         <div class="set"><a href="./set.php">Zestaw 7</a></div>
     </main>
-    
+
     <footer>
         <?php 
             require_once("../footer.php");

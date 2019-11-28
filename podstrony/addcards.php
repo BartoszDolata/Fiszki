@@ -12,11 +12,11 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
-    
+
     <aside>
         <?php 
         require_once("./nav.php");
@@ -33,22 +33,22 @@
                 <option value="set3">Zestaw 3</option>
             </select>
             <div id="form" class="add">
-            <input type="text" name="pol" placeholder="1 po polsku...">
-            <input type="text" name="eng" placeholder="1 po angielsku...">
+                <input type="text" name="pol" placeholder="1 po polsku...">
+                <input type="text" name="eng" placeholder="1 po angielsku...">
             </div>
             <div class="plus"><i class="fas fa-plus"></i></div>
             <input type="submit" value="Dodaj!">
 
         </form>
-        
+
     </main>
 
     <footer>
-    <?php 
+        <?php 
         require_once("../footer.php");
     ?>
     </footer>
-        
+
     <script src="../js/burger.js"></script>
     <script src="../js/cards.js"></script>
 </body>

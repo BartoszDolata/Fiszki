@@ -12,7 +12,7 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
@@ -22,7 +22,7 @@
         require_once("./nav.php");
         ?>
     </aside>
-    
+
     <main class="flex-container">
         <form method="post" class="flex-container cntr">
             <div>Podaj nazwe zestawu</div>
@@ -32,7 +32,7 @@
 
         </form>
     </main>
-    
+
     <footer>
         <?php 
             require_once("../footer.php");

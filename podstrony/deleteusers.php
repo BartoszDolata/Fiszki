@@ -12,11 +12,11 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
-   
+
     <aside>
         <?php 
         require_once("./nav.php");
@@ -36,7 +36,7 @@
         </select>
         <input type="submit" value="Usuń użytkownika">
     </main>
-    
+
     <footer>
         <?php 
             require_once("../footer.php");

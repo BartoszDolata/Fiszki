@@ -12,7 +12,7 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
@@ -50,7 +50,7 @@
 
         </form>
     </main>
-    
+
     <footer>
         <?php 
             require_once("../footer.php");

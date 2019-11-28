@@ -12,17 +12,17 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
-    
+
     <aside>
         <?php 
         require_once("./nav.php");
         ?>
     </aside>
-    
+
     <main class="flex-container">
         <p class="name akp">Użytkownik</p>
         <form class="flex-container cntr">

@@ -12,11 +12,11 @@
 
 <body class="main">
     <header class="head">
-    <?php 
+        <?php 
         require_once("./header.php");
         ?>
     </header>
-    
+
     <aside>
         <?php 
         require_once("./nav.php");
@@ -39,7 +39,7 @@
                 w jakim stanie trudno zaradzić wolał z wieczerz wszyscy Soplicowie są, z drzew raz wraz skrzypi.</div>
         </div>
     </main>
-    
+
     <footer>
         <?php 
             require_once("../footer.php");
