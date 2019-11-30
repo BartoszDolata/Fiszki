@@ -10,6 +10,7 @@ html {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     scroll-behavior: smooth;
+    min-width: 320px;
 }
 
 header.index {
@@ -86,7 +87,6 @@ section.login {
 
 }
 
-
 section.login input {
     display: block;
     margin: 2vh;
@@ -136,46 +136,6 @@ footer {
 footer p {
     text-align: center;
     font-size: 1.5rem;
-}
-
-@media (max-width: 1025px) {
-
-    section.login input {
-        width: 40vw;
-        height: 5vh;
-    }
-
-    footer p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 760px) {
-    main.witaj {
-        height: 93vh;
-    }
-
-    main.witaj h3 {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-
-    main.witaj p {
-        font-size: 1.3rem;
-        text-align: center;
-
-    }
-
-    section.login input {
-        width: 60vw;
-        height: 8vh;
-    }
-
-    header.index a {
-        right: 5vw;
-        left: 5vw;
-        width: 90vw;
-    }
 }
 
 
@@ -236,29 +196,10 @@ aside {
     z-index: 1;
 }
 
-@media(max-width:1024px) {
-    aside {
-        width: 40%;
-        left: -40%;
-    }
-}
-
-@media(max-width:900px) {
-    aside {
-        width: 100%;
-        left: -100%;
-        padding-top: 10px;
-    }
-}
-
 aside nav ul {
     list-style-type: none;
     margin-top: 10ch;
-
-
 }
-
-
 
 aside nav ul li a {
     display: block;
@@ -329,14 +270,9 @@ aside nav ul li:hover a {
     box-shadow: 0px 0px 5px 4px #2E2E40;
 }
 
-@media(max-width: 760px) {
-    .set a {
-        flex-basis: 100vw;
-        font: 1.3rem sans-serif;
-    }
-}
 
-.set :hover {
+
+.set a:hover {
     box-shadow: 0px 0px 18px 5px rgba(129, 161, 237, 1);
 }
 
@@ -356,19 +292,7 @@ aside nav ul li:hover a {
     border: 1px solid gray;
 }
 
-@media(max-width: 760px) {
 
-    .cntr>input,
-    .cntr>select {
-        width: 80%;
-
-    }
-
-    .add {
-        width: 80%;
-    }
-
-}
 
 .opt>* {
     background-color: rgba(46, 46, 64, .8);
@@ -421,18 +345,7 @@ input[type="password"] {
     background-color: transparent;
 }
 
-@media(max-width:1000px) {
 
-    .fiszka {
-        width: 80vw;
-        height: 60vh;
-    }
-
-    .polish,
-    .english {
-        font-size: 1.4rem;
-    }
-}
 
 .polish,
 .english {
@@ -453,6 +366,7 @@ input[type="password"] {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .name {
@@ -521,9 +435,6 @@ input[type="password"] {
     line-height: 100%;
 }
 
-
-
-
 .flex-row>.trash {
     min-width: 50px;
 
@@ -533,11 +444,103 @@ input[type="password"] {
     color: rgba(0, 0, 0, 0.5)
 }
 
+@media (max-width: 1025px) {
+
+    section.login input {
+        width: 40vw;
+        height: 5vh;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 760px) {
+    main.witaj {
+        height: 90vh;
+    }
+
+    main.witaj h3 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    main.witaj p {
+        font-size: 1.3rem;
+        text-align: center;
+
+    }
+
+    section.login input {
+        width: 60vw;
+        height: 8vh;
+    }
+
+    header.index a {
+        right: 5vw;
+        left: 5vw;
+        width: 90vw;
+    }
+}
+
+@media(max-width:1025px) {
+    aside {
+        width: 40%;
+        left: -40%;
+    }
+}
+
+@media(max-width:900px) {
+    aside {
+        width: 100%;
+        left: -100%;
+        padding-top: 10px;
+    }
+}
+
+
+
+@media(max-width: 760px) {
+    .set a {
+        flex-basis: 100vw;
+        font: 1.3rem sans-serif;
+    }
+}
+
+@media(max-width: 760px) {
+
+    .cntr>input,
+    .cntr>select {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+
+    .add {
+        width: 80%;
+    }
+
+    .cntr>div {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:1000px) {
+
+    .fiszka {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .polish,
+    .english {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 760px) {
     .flex-row {
         flex-direction: column;
         flex-wrap: nowrap;
     }
-
-
 }

@@ -26,18 +26,13 @@
     
     <main class="flex-container">
         <form method="post" class="flex-container cntr">
-            <div>Wybierz nazwę zestawu</div>
-            <select name="sets" class="cntr opt">
-                <option value="">Rozwiń listę</option>
-                <option value="set1">Zestaw 1</option>
-                <option value="set2">Zestaw 2</option>
-                <option value="set3">Zestaw 3</option>
-            </select>
-            <select name="cards" class="cntr opt">
-                <option value="">Rozwiń listę</option>
-                <option value="card1">emulować - emulate</option>
-                <option value="card2">informatyka - Information Technology(IT)</option>
-                <option value="card3">Lorem ipsum dolor sit, amet consectetur</option>
+            <div>Wpisz symbol klasy</div>
+            <select class="opt" name="schooclass">
+                <option value="1a">1A</option>
+                <option value="1b">1B</option>
+                <option value="2a">2A</option>
+                <option value="2b">2B</option>
+                <option value="3c">3C</option>
             </select>
             <input type="submit" value="Usuń!">
         </form>
@@ -51,6 +46,5 @@
 
     <script src="../js/burger.js"></script>
 </body>
-</html>
 
 </html>

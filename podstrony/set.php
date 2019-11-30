@@ -25,7 +25,7 @@
     </aside>
 
     <main class="flex-container">
-        <div class="set cntr"><a href="fiszki.php" class="link_reset"><i class="fas fa-sticky-note"></i>Ucz się!</a>
+        <div class="set cntr"><a href="fiszki.php" class="link_reset">Ucz się!</a>
         </div>
         <section class="edit_set">
             <div class="flex-row">
