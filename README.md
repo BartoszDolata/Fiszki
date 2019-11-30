@@ -29,3 +29,4 @@ Funkcjonalność:
     -dodaje klasy;
     -usuwa klasy;
 
+ Obecnie została zrobiona strona dla użytkownika zawierająca wszystkie komponenty. W następnych etapach prac zostaną dostosowane uprawnienia do użytkowników
