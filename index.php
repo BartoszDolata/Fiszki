@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css?<?=time()?>">
+    <title>Fiszkopedia</title>
 </head>
 
 <body>
@@ -23,11 +23,10 @@
         <section class="login">
             <a name="zaloguj"></a>
             <h2>Zaloguj się do serwisu</h2>
-            <form action="post">
+            <form method="post" action="scripts/login.php">
                 <input class="login" type="text" name="login" placeholder="Login">
                 <input class="login" type="password" name="password" placeholder="Password">
-                <!-- <input type="submit" name="button" value="Zaloguj"> -->
-                <a href="./podstrony/sets.php">Zaloguj</a>
+                <input type="submit" name="button" value="Zaloguj">
             </form>
         </section>
         
