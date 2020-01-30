@@ -290,6 +290,7 @@ aside nav ul li:hover a {
 .cntr {
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .cntr>input,

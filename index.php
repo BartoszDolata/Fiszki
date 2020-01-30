@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)){
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -34,7 +39,7 @@
 
     </main>
     <footer>
-    <?php 
+    <?php
         require_once("./footer.php");
     ?>
     </footer>

@@ -1,3 +1,6 @@
+<?php
+  require_once("../scripts/security.php");
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -22,19 +25,18 @@
         require_once("./nav.php");
         ?>
     </aside>
-
-    <main class="flex-container cntr">
-
-        <p class="akp">Usuwanie użytkowników</p>
-        <select class="cntr opt" name="users">
-            <option value="1">antoni.wojda</option>
-            <option value="2">jan.kowalski</option>
-            <option value="3">janusz.nowak</option>
-            <option value="4">wojtek.smykala</option>
-            <option value="5">tadeusz.bronek</option>
-            <option value="6">tadeusz.bronek1</option>
-        </select>
+    <main>
+        <form method="post" class="flex-container cntr" action="../scripts/dropuser.php">
+            
+            <div>Usuwanie użytkowników</div>
+            <select id="wide_select" class="opt" name="users">
+            <?php
+            include("../scripts/users.php");
+        ?>
+      </select>
         <input type="submit" value="Usuń użytkownika">
+
+        </form>
     </main>
 
     <footer>

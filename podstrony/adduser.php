@@ -1,3 +1,6 @@
+<?php
+  require_once("../scripts/security.php");
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -23,30 +26,36 @@
         ?>
     </aside>
 
-    <main class="flex-container">
-        <form method="post" class="flex-container cntr">
+    <main class="flex-container cntr">
+        <form method="post" class="flex-container cntr" action="../scripts/adduser.php">
             <div>Wpisz dane</div>
             <input type="text" name="name" placeholder="Imię">
             <input type="text" name="lastname" placeholder="Nazwisko">
             <div>Dane do logowania</div>
             <input type="text" name="login" placeholder="Login">
             <input type="password" name="password" placeholder="Hasło">
+            <input type="password" name="password1" placeholder="Powtórz hasło">
+            <div>Fukcja użytkownika</div>
+            <select class="opt" name="function">
+            <?php
+                include("../scripts/functions.php");
+                ?>
+            </select>
             <div>Status użytkownika</div>
             <select class="opt" name="status">
-                <option value="active">Aktywny</option>
-                <option value="inactive">Nieaktywny</option>
-                <option value="deleted">Usunięty</option>
+            <?php
+                include("../scripts/statuses.php");
+                ?>
             </select>
             <div>Klasa</div>
-            <select name="schooclass">
-                <option value="1a">1A</option>
-                <option value="1b">1B</option>
-                <option value="2a">2A</option>
-                <option value="2b">2B</option>
-                <option value="3c">3C</option>
+            
+            <select name="schoolclass">
+            <?php
+                include("../scripts/classes.php");
+                ?>
             </select>
 
-            <input type="submit" value="Dodaj!">
+            <input type="submit" name ="btn" value="Dodaj!">
 
         </form>
     </main>

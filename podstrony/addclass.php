@@ -1,3 +1,7 @@
+<?php
+  require_once("../scripts/security.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 

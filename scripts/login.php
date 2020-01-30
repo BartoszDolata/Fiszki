@@ -1,25 +1,44 @@
 <?php
-$session=session_start();
+
 if(isset($_POST['button'])&& !empty($_POST['login']) && !empty($_POST['password'])){
-   
+
     $login=$_POST['login'];
     $password=$_POST['password'];
     require_once("./connect.php");
-    $sql = "SELECT `haslo` FROM `uzytkownik` WHERE `login`=$login";
+    $sql = "SELECT * FROM `uzytkownik` WHERE `login`=\"$login\"";
     $result =  mysqli_query($connect,$sql);
-    while($row = mysqli_fetch_assoc($result)){
-        $pswd=$row['haslo'];
-    }
-    echo $pswd;
-    if(password_verify($password,$row)){
-        echo $row;
+    if(mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_assoc($result)){
+            $pswd = $row['haslo'];
+            $function = $row['funkcja_id'];
+            $status = $row['status_id'];
+            $class = $row['klasa_id'];
+        }
+
+        if(password_verify($password,$pswd)){
+            session_start();
+            setcookie("session_id",session_id(),time()+60*60);
+            $_SESSION['login']=$login;
+            $_SESSION['function']=$function;
+            $_SESSION['status']=$status;
+            $_SESSION['class']=$class;
+            $_SESSION['id']=session_id();
+           header("location: ../podstrony/sets.php");
+        } else {
+            header("location: ../index.php");
+        }
     } else {
-        echo $result;
+        header("location: ../index.php");
     }
 
-    //echo password_hash('admin123',PASSWORD_BCRYPT);
+
+
+
 } else {
-    header('location: ../podstrony/sets.php');
+    header("location: ../index.php");
 }
+
+
+
 
 ?>

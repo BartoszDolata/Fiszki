@@ -1,3 +1,6 @@
+<?php
+  require_once("../scripts/security.php");
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -28,11 +31,9 @@
         <form method="post" class="flex-container cntr">
             <div>Wpisz symbol klasy</div>
             <select class="opt" name="schooclass">
-                <option value="1a">1A</option>
-                <option value="1b">1B</option>
-                <option value="2a">2A</option>
-                <option value="2b">2B</option>
-                <option value="3c">3C</option>
+            <?php
+                include("../scripts/classes.php");
+                ?>
             </select>
             <input type="submit" value="Usuń!">
         </form>
