@@ -5,15 +5,17 @@ if(isset($_POST['button'])&& !empty($_POST['login']) && !empty($_POST['password'
     $login=$_POST['login'];
     $password=$_POST['password'];
     require_once("./connect.php");
-    $sql = "SELECT * FROM `uzytkownik` WHERE `login`=\"$login\"";
-    $result =  mysqli_query($connect,$sql);
-    if(mysqli_num_rows($result)>0){
-        while($row = mysqli_fetch_assoc($result)){
-            $pswd = $row['haslo'];
-            $function = $row['funkcja_id'];
-            $status = $row['status_id'];
-            $class = $row['klasa_id'];
-        }
+    $stmt = $connect->prepare("SELECT * FROM `uzytkownik` WHERE `login`=?");
+    $stmt->bind_param('s', $login);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $pswd = $row['haslo'];
+      $function = $row['funkcja_id'];
+      $status = $row['status_id'];
+      $class = $row['klasa_id'];
+    }
 
         if(password_verify($password,$pswd)){
             session_start();
@@ -28,11 +30,8 @@ if(isset($_POST['button'])&& !empty($_POST['login']) && !empty($_POST['password'
             header("location: ../index.php");
         }
     } else {
-        header("location: ../index.php");
+      header("location: ../index.php");
     }
-
-
-
 
 } else {
     header("location: ../index.php");

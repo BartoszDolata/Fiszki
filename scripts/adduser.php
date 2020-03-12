@@ -21,8 +21,9 @@
             $sql = "SELECT * FROM `uzytkownik` WHERE `login`=\"$login\"";
             $result =  mysqli_query($connect,$sql);
                 if(mysqli_num_rows($result)==0){
-                    $sql2 = "INSERT INTO `uzytkownik` (`login`, `haslo`, `imie`, `nazwisko`, `funkcja_id`, `status_id`, `klasa_id`) VALUES ('$login', '$en_paswd', '$name', '$lastname','$function', '$status', '$class')";
-                    if(mysqli_query($connect,$sql2)){
+                  $stmt = $connect->prepare("INSERT INTO `uzytkownik` (`login`, `haslo`, `imie`, `nazwisko`, `funkcja_id`, `status_id`, `klasa_id`) VALUES (?,?,?,?,?,?,?)");
+                  $stmt->bind_param('ssssiii',$login, $en_paswd, $name, $lastname,$function, $status, $class);
+                    if($stmt->execute()){
                     header("location: ../podstrony/adduser.php");
                     }
                     else{
@@ -35,6 +36,6 @@
             header("location: ../podstrony/adduser.php");
         }
     }
-    
+
 
 ?>
