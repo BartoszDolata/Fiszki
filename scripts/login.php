@@ -30,12 +30,12 @@ if(isset($_POST['button'])&& !empty($_POST['login']) && !empty($_POST['password'
             header("location: ../index.php");
         }
     } else {
-      header("location: ../index.php");
+     header("location: ../index.php");
     }
 
 } else {
     header("location: ../index.php");
-}
+ }
 
 
 

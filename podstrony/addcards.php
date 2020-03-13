@@ -15,13 +15,13 @@
 
 <body class="main">
     <header class="head">
-        <?php 
+        <?php
         require_once("./header.php");
         ?>
     </header>
 
     <aside>
-        <?php 
+        <?php
         require_once("./nav.php");
         ?>
     </aside>
@@ -30,10 +30,14 @@
         <form method="post" class="flex-container cntr">
             <div>Wybierz nazwę zestawu</div>
             <select name="sets" class="cntr opt">
-                <option value="">Rozwiń listę</option>
-                <option value="set1">Zestaw 1</option>
-                <option value="set2">Zestaw 2</option>
-                <option value="set3">Zestaw 3</option>
+              <?php
+              require("../scripts/connect.php");
+              $sql = "SELECT * FROM `zestaw`";
+              $result=mysqli_query($connect,$sql);
+              while($row=mysqli_fetch_assoc($result)){
+                echo "<option value=".$row['id_zestawu'].">".$row['nazwa_zestawu']."</option>";
+              }
+               ?>
             </select>
             <div id="form" class="add">
                 <input type="text" name="pol" placeholder="1 po polsku...">
@@ -47,7 +51,7 @@
     </main>
 
     <footer>
-        <?php 
+        <?php
         require_once("../footer.php");
     ?>
     </footer>

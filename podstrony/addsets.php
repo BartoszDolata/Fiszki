@@ -1,5 +1,16 @@
 <?php
   require_once("../scripts/security.php");
+  if(isset($_POST['btn_set'])&&!empty($_POST['set_name'])){
+    require("../scripts/connect.php");
+    $name=$_POST['set_name'];
+    $set=$_POST['language'];
+    $stmt = $connect->prepare("INSERT INTO `zestaw`(`nazwa_zestawu`, `jezyk_id`) VALUES (?,?)");
+    $stmt->bind_param('si', $name,$set);
+    if($stmt->execute()){
+      header("location: ./addsets.php");
+    }
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,13 +26,13 @@
 
 <body class="main">
     <header class="head">
-        <?php 
+        <?php
         require_once("./header.php");
         ?>
     </header>
 
     <aside>
-        <?php 
+        <?php
         require_once("./nav.php");
         ?>
     </aside>
@@ -29,15 +40,25 @@
     <main class="flex-container">
         <form method="post" class="flex-container cntr">
             <div>Podaj nazwe zestawu</div>
-            <input type="text" placeholder="Be creative!">
-            <input type="submit" value="Utwórz!">
-
+            <input type="text" name="set_name" placeholder="Be creative!">
+            <select name="language">
+              <?php
+              require("../scripts/connect.php");
+              $sql = "SELECT `jezyk_id`, `jezyk_nazwa` FROM `jezyk`";
+              $result=mysqli_query($connect,$sql);
+              while($row=mysqli_fetch_assoc($result)){
+                echo "<option value=".$row['jezyk_id'].">".$row['jezyk_nazwa']."</option>";
+              }
+               ?>
+            </select>
+            <br>
+            <input type="submit" name="btn_set" value="Utwórz!">
 
         </form>
     </main>
 
     <footer>
-        <?php 
+        <?php
             require_once("../footer.php");
         ?>
     </footer>

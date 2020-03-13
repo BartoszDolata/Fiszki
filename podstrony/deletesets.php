@@ -1,5 +1,15 @@
 <?php
   require_once("../scripts/security.php");
+  if(isset($_POST['btn'])){
+    require("../scripts/connect.php");
+    $id=$_POST['sets'];
+    $stmt = $connect->prepare("DELETE FROM `zestaw` WHERE `id_zestawu`=?");
+    $stmt->bind_param('i', $id);
+  header("location: ./deletesets.php");
+    if($stmt->execute()){
+      header("location: ./deletesets.php");
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,30 +25,38 @@
 
 <body class="main">
     <header class="head">
-        <?php 
+        <?php
         require_once("./header.php");
         ?>
     </header>
 
     <aside>
-        <?php 
+        <?php
         require_once("./nav.php");
         ?>
     </aside>
 
     <main class="flex-container cntr">
-        <p class="akp">Usuwanie zestawu</p>
-        <select name="sets" class="cntr opt">
-            <option value="">Wybierz zestaw</option>
-            <option value="set1">Zestaw 1</option>
-            <option value="set2">Zestaw 2</option>
-            <option value="set3">Zestaw 3</option>
-        </select>
-        <input type="submit" value="Usuń zestaw">
+
+        <form method="post" class="flex-container cntr">
+          <p class="akp">Usuwanie zestawu</p>
+          <select name="sets" class="cntr opt">
+            <?php
+            require("../scripts/connect.php");
+            $sql = "SELECT * FROM `zestaw`";
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_assoc($result)){
+              echo "<option value=".$row['id_zestawu'].">".$row['nazwa_zestawu']."</option>";
+            }
+             ?>
+          </select>
+          <input type="submit" name="btn" value="Usuń zestaw">
+        </form>
+
     </main>
 
     <footer>
-        <?php 
+        <?php
             require_once("../footer.php");
         ?>
     </footer>
