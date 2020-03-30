@@ -1,5 +1,27 @@
 <?php
     require_once("../scripts/security.php");
+
+    //dodawanie
+    if(isset($_POST['btnadd'])){
+        require("../scripts/connect.php");
+        $counter=1;
+        while(isset($_POST["pol$counter"])&&isset($_POST["eng$counter"])){
+            if(!empty($_POST["pol$counter"]) && !empty($_POST["eng$counter"])){
+                $pol=$_POST["pol$counter"];
+                $eng=$_POST["eng$counter"];
+                $zestaw=$_POST["sets"];
+                $stmt = $connect->prepare("INSERT INTO `fiszki`( `tekst_fiszki`, `tlumaczenie`, `zestaw_id`) VALUES (?,?,?)");
+                  $stmt->bind_param('ssi',$pol,$eng,$zestaw);
+                    if($stmt->execute()){
+                    header("location: ../podstrony/addcards.php");
+                    }
+                    else{
+                        echo "databasse err";
+                    };
+            }
+            $counter++;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -40,11 +62,11 @@
                ?>
             </select>
             <div id="form" class="add">
-                <input type="text" name="pol" placeholder="1 po polsku...">
-                <input type="text" name="eng" placeholder="1 po angielsku...">
+                <input type="text" name="pol1" placeholder="1 po polsku...">
+                <input type="text" name="eng1" placeholder="1 po angielsku...">
             </div>
             <div class="plus"><i class="fas fa-plus"></i></div>
-            <input type="submit" value="Dodaj!">
+            <input type="submit" name="btnadd" value="Dodaj!">
 
         </form>
 

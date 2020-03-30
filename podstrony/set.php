@@ -28,42 +28,35 @@
     </aside>
 
     <main class="flex-container">
-        <div class="set cntr"><a href="fiszki.php" class="link_reset">Ucz się!</a>
+    <?php
+        echo<<<AA
+        <div class="set cntr"><a href="fiszki.php?zestaw=$_GET[id]" class="link_reset">Ucz się!</a>
         </div>
+        AA;
+    ?>
+        <
         <section class="edit_set">
-            <div class="flex-row">
-                <p>informatyka</p>
-                <p>Information Technology</p><a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>emulate</p>
-                <p>emulować</p><a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>Lorem ipsum dolor sit amet consectetur adipisi</p>
-                <p>tłumaczenie tego to próba na bardzo długim ciągu, który raczej nie wystąpi</p><a href=""
-                    class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>card</p>
-                <p>karta</p>
-                <a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>disc</p>
-                <p>dysk</p>
-                <a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>data</p>
-                <p>dane</p>
-                <a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="flex-row">
-                <p>fiszka</p>
-                <p>tłumaczenie</p>
-                <a href="" class="link_reset trash"><i class="fas fa-trash"></i></a>
-            </div>
+            <?php
+             if(isset($_GET['id'])){
+                require_once("../scripts/connect.php");
+                $id_zestawu = $_GET['id'];
+                $sql = "SELECT * FROM `fiszki` WHERE `zestaw_id`=$id_zestawu";
+                $result=mysqli_query($connect,$sql);
+                if(mysqli_num_rows($result)>0){
+                while($row=mysqli_fetch_assoc($result)){
+                    echo <<<FISZKA
+                    <div class="flex-row">
+                    <p>$row[tekst_fiszki]</p>
+                    <p>$row[tlumaczenie]</p><a href="../scripts/del_card.php?del_id=$row[id_fiszki]&set=$row[zestaw_id]" class="link_reset trash"><i class="fas fa-trash"></i></a>
+                </div>
+                FISZKA;
+                }
+            }
+            else{
+                echo "<h1>Ups!</h1><p class='nocards'> Nie masz jeszcze dodatnych żadnych fiszek. Aby powiekszyć swoją bazę kliknij <a href='./addcards.php'>TUTAJ</a></p>";
+            }
+            }
+            ?>
         </section>
     </main>
 

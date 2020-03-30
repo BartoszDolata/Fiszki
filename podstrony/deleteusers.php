@@ -26,7 +26,7 @@
         ?>
     </aside>
     <main>
-        <form method="post" class="flex-container cntr" action="../scripts/dropuser.php">
+        <form method="post" class="flex-container cntr" action="../scripts/delete_user.php">
             
             <div>Usuwanie użytkowników</div>
             <select id="wide_select" class="opt" name="users">

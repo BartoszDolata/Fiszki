@@ -27,20 +27,26 @@
     </aside>
 
     <main class="flex-container cntr">
-        <div class="fiszka">
-            <div class="polish">informatyka</div>
-            <div class="english">Information Technology (IT)</div>
-        </div>
-        <div class="fiszka">
-            <div class=" polish">emulować</div>
-            <div class="english">emulate</div>
-        </div>
-        <div class="fiszka">
-            <div class=" polish">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ex ut eaque dolorum
-                quo possimus quidem illum. A, sint voluptas?</div>
-            <div class="english">Litwo! Ojczyzno moja! Ty jesteś jak zdrowie. Nazywał się młodzieniec oczy sąd, strony a
-                w jakim stanie trudno zaradzić wolał z wieczerz wszyscy Soplicowie są, z drzew raz wraz skrzypi.</div>
-        </div>
+        <?php
+        if(isset($_GET['zestaw'])){
+            require_once("../scripts/connect.php");
+            $id_zestawu = $_GET['zestaw'];
+            $sql = "SELECT * FROM `fiszki` WHERE `zestaw_id`=$id_zestawu";
+            $result=mysqli_query($connect,$sql);
+            if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_assoc($result)){
+            echo <<<FISZKA
+                <div class="fiszka">
+                    <div class="polish">$row[tekst_fiszki]</div>
+                    <div class="english">$row[tlumaczenie]</div>
+                </div>
+            FISZKA;
+            }
+            }else{
+             echo "<h1>Ups!</h1><p class='nocards'> Nie masz jeszcze dodatnych żadnych fiszek. Aby powiekszyć swoją bazę kliknij <a href='./addcards.php'>TUTAJ</a></p>";
+            }
+        }
+        ?>
     </main>
 
     <footer>

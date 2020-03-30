@@ -1,5 +1,30 @@
 <?php
   require_once("../scripts/security.php");
+  if(isset($_POST["btn_class"]) && !empty($_POST["classname"])){
+    require("../scripts/connect.php");
+    $class_name=$_POST["classname"];
+    $regexp="/^[0-9]{1}[A-Z]{1,2}$/";
+    if(preg_match($regexp,$class_name)){
+        $sql = "SELECT * FROM `klasa` WHERE `symbol_klasy`=\"$class_name\"";
+            $result =  mysqli_query($connect,$sql);
+                if(mysqli_num_rows($result)==0){
+                    $stmt = $connect->prepare("INSERT INTO `klasa`(`symbol_klasy`) VALUES (?)");
+                    $stmt->bind_param('s',$class_name);
+                    if($stmt->execute()){
+                        header("location: ../podstrony/addclass.php");
+                            }
+                            else{
+                                echo "databasse err";
+                            };
+                        }else{
+                            echo "<script>alert('Ta klasa juz istnieje')</script>";
+                        }
+    }else{
+        echo "<script>alert('Nieprawidłowy format. Wpisz numer klasy i literę alfabetu')</script>";
+    }
+    
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +57,7 @@
         <form method="post" class="flex-container cntr">
             <div>Wpisz symbol klasy</div>
             <input type="text" name="classname" placeholder="[Nr_klasy][Litera]" id="sqlclass">
-            <input type="submit" value="Dodaj!" id="button">
+            <input type="submit" value="Dodaj!" id="button" name="btn_class">
         </form>
     </main>
     

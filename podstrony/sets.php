@@ -28,19 +28,21 @@
     </aside>
 
     <main class="flex-container">
-        <div class="set"><a href="./set.php">Zestaw 1</a></div>
-        <div class="set"><a href="./set.php">Zestaw 2</a></div>
-        <div class="set"><a href="./set.php">Zestaw 3</a></div>
-        <div class="set"><a href="./set.php">Zestaw 4</a></div>
-        <div class="set"><a href="./set.php">Zestaw 5</a></div>
-        <div class="set"><a href="./set.php">Zestaw 6</a></div>
-        <div class="set"><a href="./set.php">Zestaw 7</a></div>
+        <?php
+        require_once("../scripts/connect.php");
+        $sql = "SELECT * FROM `zestaw`";
+        $result=mysqli_query($connect,$sql);
+        while($row=mysqli_fetch_assoc($result)){
+        
+            echo "<div class='set'>" . "<a href=\"./set.php?id=".$row['id_zestawu']."\"".">" . $row['nazwa_zestawu'] . "</a></div>";
+        }
+        ?>
+        
     </main>
 
     <footer>
         <?php
-        print_r($_SESSION);
-            require_once("../footer.php");
+        require_once("../footer.php");
         ?>
     </footer>
 

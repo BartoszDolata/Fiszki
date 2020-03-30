@@ -27,47 +27,32 @@
     </aside>
 
     <main class="flex-container">
-        <p class="name akp">Użytkownik</p>
-        <form class="flex-container cntr">
-            <div class="desc">Klasa</div>
-            <select class="opt" name="schooclass">
-                <option value="1a">1A</option>
-                <option value="1b">1B</option>
-                <option value="2a">2A</option>
-                <option value="2b">2B</option>
-                <option value="3c">3C</option>
+        <form class="flex-container cntr" method=post action="../scripts/update_user.php">
+            
+        <div class="desc" style="color:#2E2E40;">Aktualizacja danych</div>
+            <select class="opt" name="login">
+                <?php require_once("../scripts/users.php");?>
             </select>
             <div class="desc">Imię i nazwisko</div>
-            <select class="opt" name="users">
-                <option value="1">Antoni Wojda</option>
-                <option value="2">Jan Kowalski</option>
-                <option value="3">Janusz Nowak</option>
-                <option value="4">Wojtek Smykała</option>
-                <option value="5">Tadeusz Bronek</option>
+            <input type="text" name="n_surname" placeholder="Nowe Nazwisko">
+            <input type="text" name="n_name" placeholder="Nowe Imię">
+            <div class="desc">Klasa</div>
+            <select class="opt" name="schooclass">
+            <?php require_once("../scripts/classes.php");?>
             </select>
-            <input type="text" placeholder="Nowe Nazwisko">
-            <input type="text" placeholder="Nowe Imię">
             <div class="desc">status</div>
             <select class="opt" name="status">
-                <option value="active">Aktywny</option>
-                <option value="inactive">Nieaktywny</option>
-                <option value="deleted">Usunięty</option>
+            <?php require_once("../scripts/statuses.php");?>
+            </select>
+            <div class="desc">Funkcja</div>
+            <select class="opt" name="function">
+            <?php require_once("../scripts/functions.php");?>
             </select>
             <div class="desc">Logowanie</div>
-            <select class="opt" name="users">
-                <option value="1">antoni.wojda</option>
-                <option value="2">jan.kowalski</option>
-                <option value="3">janusz.nowak</option>
-                <option value="4">wojtek.smykala</option>
-                <option value="5">tadeusz.bronek</option>
-                <option value="6">tadeusz.bronek1</option>
-            </select>
-            <input type="text" placeholder="Nowy Login">
-            <input type="password" placeholder="Nowe hasło">
-
-
-
-            <input type="submit" value="Aktualizuj!">
+            <input type="text" name="n_log" placeholder="Nowy Login">
+            <input type="password" name="n_pas" placeholder="Nowe hasło">
+            <input type="password" name="n_pas1" placeholder="Powtórz hasło">
+            <input type="submit" name="btn_update" value="Aktualizuj!">
 
         </form>
     </main>

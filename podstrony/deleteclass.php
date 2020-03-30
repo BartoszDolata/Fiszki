@@ -1,5 +1,16 @@
 <?php
   require_once("../scripts/security.php");
+  if(isset($_POST['del'])){
+    require("../scripts/connect.php");
+    $id_class=$_POST['schooclass'];
+    $stmt = $connect->prepare("DELETE FROM `klasa` WHERE `id_klasy`=?");
+    $stmt->bind_param('i', $id_class);
+  header("location: ./deleteclass.php");
+    if($stmt->execute()){
+      header("location: ./deleteclass.php");
+    }
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -35,7 +46,7 @@
                 include("../scripts/classes.php");
                 ?>
             </select>
-            <input type="submit" value="Usuń!">
+            <input type="submit" name="del" value="Usuń!">
         </form>
     </main>
     
