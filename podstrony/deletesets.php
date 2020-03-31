@@ -3,9 +3,9 @@
   if(isset($_POST['btn'])){
     require("../scripts/connect.php");
     $id=$_POST['sets'];
+    echo "<script>console.log(\"".$id."\")</script>";
     $stmt = $connect->prepare("DELETE FROM `zestaw` WHERE `id_zestawu`=?");
     $stmt->bind_param('i', $id);
-  header("location: ./deletesets.php");
     if($stmt->execute()){
       header("location: ./deletesets.php");
     }
@@ -46,11 +46,13 @@
             $sql = "SELECT * FROM `zestaw`";
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_assoc($result)){
-              echo "<option value=".$row['id_zestawu'].">".$row['nazwa_zestawu']."</option>";
+              echo "<option value=\"".$row['id_zestawu']."\">".$row['nazwa_zestawu']."</option>";
             }
              ?>
           </select>
           <input type="submit" name="btn" value="Usuń zestaw">
+          <br>
+          <p>Możesz usunąć tylko pusty zestaw</p>
         </form>
 
     </main>

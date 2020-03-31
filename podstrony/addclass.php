@@ -68,7 +68,6 @@
     </footer>
 
     <script src="../js/burger.js"></script>
-    <script src="../js/valid.js"></script>
 </body>
 
 </html>

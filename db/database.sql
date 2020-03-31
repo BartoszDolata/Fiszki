@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Lis 2019, 13:31
--- Wersja serwera: 10.4.6-MariaDB
--- Wersja PHP: 7.1.31
+-- Czas generowania: 31 Mar 2020, 21:00
+-- Wersja serwera: 10.4.11-MariaDB
+-- Wersja PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,9 +31,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `fiszki` (
   `id_fiszki` int(11) NOT NULL,
   `tekst_fiszki` varchar(80) COLLATE utf8mb4_polish_ci NOT NULL,
-  `tłumaczenie` varchar(80) COLLATE utf8mb4_polish_ci NOT NULL,
+  `tlumaczenie` varchar(80) COLLATE utf8mb4_polish_ci NOT NULL,
   `zestaw_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `fiszki`
+--
+
+INSERT INTO `fiszki` (`id_fiszki`, `tekst_fiszki`, `tlumaczenie`, `zestaw_id`) VALUES
+(11, 'strona', 'website', 7),
+(12, 'sieć', 'network', 7),
+(13, 'światłowód', 'fibre', 7),
+(18, 'sprzęt komputerowy', 'hardware', 6),
+(19, 'interfejs graficzny', 'GUI', 6);
 
 -- --------------------------------------------------------
 
@@ -46,6 +57,15 @@ CREATE TABLE `funkcja` (
   `nazwa` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
+--
+-- Zrzut danych tabeli `funkcja`
+--
+
+INSERT INTO `funkcja` (`id_funkcji`, `nazwa`) VALUES
+(1, 'administator'),
+(2, 'nauczyciel'),
+(3, 'uczen');
+
 -- --------------------------------------------------------
 
 --
@@ -53,9 +73,19 @@ CREATE TABLE `funkcja` (
 --
 
 CREATE TABLE `jezyk` (
-  `jezyki_id` int(11) NOT NULL,
+  `jezyk_id` int(11) NOT NULL,
   `jezyk_nazwa` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `jezyk`
+--
+
+INSERT INTO `jezyk` (`jezyk_id`, `jezyk_nazwa`) VALUES
+(1, 'Angielski'),
+(2, 'Niemiecki'),
+(3, 'Francuski'),
+(4, 'Hiszpański');
 
 -- --------------------------------------------------------
 
@@ -68,6 +98,18 @@ CREATE TABLE `klasa` (
   `symbol_klasy` varchar(6) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
+--
+-- Zrzut danych tabeli `klasa`
+--
+
+INSERT INTO `klasa` (`id_klasy`, `symbol_klasy`) VALUES
+(1, 'Brak'),
+(2, '1A'),
+(3, '2A'),
+(4, '2B'),
+(5, '3A'),
+(6, '3B');
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +120,15 @@ CREATE TABLE `status` (
   `id_statusu` int(11) NOT NULL,
   `nazwa_statusu` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `status`
+--
+
+INSERT INTO `status` (`id_statusu`, `nazwa_statusu`) VALUES
+(1, 'aktywny'),
+(2, 'nieaktywny'),
+(3, 'usuniety');
 
 -- --------------------------------------------------------
 
@@ -95,6 +146,15 @@ CREATE TABLE `uzytkownik` (
   `klasa_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
+--
+-- Zrzut danych tabeli `uzytkownik`
+--
+
+INSERT INTO `uzytkownik` (`login`, `haslo`, `imie`, `nazwisko`, `funkcja_id`, `status_id`, `klasa_id`) VALUES
+('administrator', '$argon2id$v=19$m=65536,t=4,p=1$R2ZFeGF3ckZUc0JXbGVPdA$P3BsWYktPRCiPKBOndPxfDE+DMZ+lyDBqUVj6Pvyn7c', 'Jan', 'Ważny', 1, 1, 1),
+('nauczyciel', '$argon2id$v=19$m=65536,t=4,p=1$RFROcXNnakV3ejM4VVFnQw$6Qa02K6sKo9OO1ggPNVTm8wH8jS/PahhbBp+BzIrkMs', 'Jan', 'Kowalski', 2, 1, 1),
+('uczen', '$argon2id$v=19$m=65536,t=4,p=1$elcuaXVFUWcvQ2FjT1FINw$qV3Djo3JYGz6qvknq6bZg0D8EYvY7uLeib4M82+l4do', 'Jan', 'Kowalski', 3, 1, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -106,6 +166,14 @@ CREATE TABLE `zestaw` (
   `nazwa_zestawu` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
   `jezyk_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `zestaw`
+--
+
+INSERT INTO `zestaw` (`id_zestawu`, `nazwa_zestawu`, `jezyk_id`) VALUES
+(6, 'Komputer', 1),
+(7, 'Sieci', 1);
 
 -- --------------------------------------------------------
 
@@ -139,7 +207,7 @@ ALTER TABLE `funkcja`
 -- Indeksy dla tabeli `jezyk`
 --
 ALTER TABLE `jezyk`
-  ADD PRIMARY KEY (`jezyki_id`);
+  ADD PRIMARY KEY (`jezyk_id`);
 
 --
 -- Indeksy dla tabeli `klasa`
@@ -181,28 +249,34 @@ ALTER TABLE `zestaw_klasy`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `fiszki`
+--
+ALTER TABLE `fiszki`
+  MODIFY `id_fiszki` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT dla tabeli `funkcja`
 --
 ALTER TABLE `funkcja`
-  MODIFY `id_funkcji` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_funkcji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `jezyk`
 --
 ALTER TABLE `jezyk`
-  MODIFY `jezyki_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `jezyk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `klasa`
 --
 ALTER TABLE `klasa`
-  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `zestaw`
 --
 ALTER TABLE `zestaw`
-  MODIFY `id_zestawu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_zestawu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -226,7 +300,7 @@ ALTER TABLE `uzytkownik`
 -- Ograniczenia dla tabeli `zestaw`
 --
 ALTER TABLE `zestaw`
-  ADD CONSTRAINT `Zestaw_fk0` FOREIGN KEY (`jezyk_id`) REFERENCES `jezyk` (`jezyki_id`);
+  ADD CONSTRAINT `Zestaw_fk0` FOREIGN KEY (`jezyk_id`) REFERENCES `jezyk` (`jezyk_id`);
 
 --
 -- Ograniczenia dla tabeli `zestaw_klasy`

@@ -36,23 +36,28 @@
             <div class="desc">Imię i nazwisko</div>
             <input type="text" name="n_surname" placeholder="Nowe Nazwisko">
             <input type="text" name="n_name" placeholder="Nowe Imię">
+            <input type="submit" name="btn_update1" value="Aktualizuj!">
             <div class="desc">Klasa</div>
-            <select class="opt" name="schooclass">
+            <select class="opt" name="schoolclass">
             <?php require_once("../scripts/classes.php");?>
+            <input type="submit" name="btn_update2" value="Aktualizuj!">
+            <hr>
             </select>
             <div class="desc">status</div>
             <select class="opt" name="status">
             <?php require_once("../scripts/statuses.php");?>
             </select>
+            <input type="submit" name="btn_update3" value="Aktualizuj!">
             <div class="desc">Funkcja</div>
             <select class="opt" name="function">
             <?php require_once("../scripts/functions.php");?>
+            <input type="submit" name="btn_update4" value="Aktualizuj!">
             </select>
             <div class="desc">Logowanie</div>
             <input type="text" name="n_log" placeholder="Nowy Login">
             <input type="password" name="n_pas" placeholder="Nowe hasło">
             <input type="password" name="n_pas1" placeholder="Powtórz hasło">
-            <input type="submit" name="btn_update" value="Aktualizuj!">
+            <input type="submit" name="btn_update5" value="Aktualizuj!">
 
         </form>
     </main>

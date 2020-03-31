@@ -331,7 +331,7 @@ aside nav ul li:hover a {
 
 input[type="text"],
 input[type="password"] {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .cntr>input[type="submit"]:hover {
@@ -507,7 +507,7 @@ h1 {
 
     section.login input {
         width: 60vw;
-        height: 8vh;
+        height: 6vh;
     }
 
     header.index a {
@@ -575,6 +575,8 @@ h1 {
         flex-wrap: nowrap;
     }
 
+
+}
 }
 
 @media(max-width:700px) {
